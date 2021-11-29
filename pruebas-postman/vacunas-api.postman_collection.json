@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "54f6103f-9749-4ecc-9eb5-4e6d838ab381",
+		"name": "vacunas-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar-vacunas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vacunas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacunas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener-una-vacuna",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vacunas/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacunas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-vacuna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"mi Vaacunita2\",\r\n        \"dosis\": \"Segunda\",\r\n        \"viaAplicacion\": \"Por las buenas\",\r\n        \"num_lote\": \"dasdad\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vacunas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacunas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-vacuna",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"nombre\": \"Actualizada\",\r\n        \"dosis\": \"Unica\",\r\n        \"viaAplicacion\": \"Intradermica\",\r\n        \"laboratorio\": \"Otra vez PPPFIZER\",\r\n        \"num_lote\": \"ZW-763-29\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vacunas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacunas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-vacuna",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vacunas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacunas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
