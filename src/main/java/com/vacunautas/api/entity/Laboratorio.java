@@ -27,7 +27,7 @@ import lombok.Setter;
 public class Laboratorio {
 	
 	@Id
-	@Column(name = "idLaboratorio", nullable = false)
+	@Column(name = "id_laboratorio", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idLaboratorio;
 	
@@ -35,6 +35,6 @@ public class Laboratorio {
 	private String nombre_lab;
 	
 	//Relación con la tabla intermedia vacuna_laboratorio
-	@OneToMany(mappedBy = "laboratorio",cascade = CascadeType.ALL)
-	private List<RelVacunaLaboratorio> rel_vacuna_laboratorio;
+	//@OneToMany(mappedBy = "laboratorio",cascade = CascadeType.ALL)
+	//private List<RelVacunaLaboratorio> rel_vacuna_laboratorio;
 }

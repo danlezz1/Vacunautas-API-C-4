@@ -23,9 +23,9 @@ import lombok.Setter;
 public class EstadoVacunacion {
 	
 	@Id
-	@Column(name = "idEstado_Vacunacion", nullable = false)
+	@Column(name = "id_estado_vacunacion", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEstado_Vacunacion;
+	private Long idEstadoVacunacion;
 	
 	@Column(name = "estado", nullable = false, length = 20)
 	private String estado;

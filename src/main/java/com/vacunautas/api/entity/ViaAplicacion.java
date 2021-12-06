@@ -27,7 +27,7 @@ import lombok.Setter;
 public class ViaAplicacion {
 
 	@Id
-	@Column(name = "idVia", nullable = false)
+	@Column(name = "id_via", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVia;
 
@@ -35,6 +35,6 @@ public class ViaAplicacion {
 	private String nombre_via;
 
 	//Relación con la tabla intermedia vacunas_vias_de_aplicación
-	@OneToMany(mappedBy = "via_aplicacion", cascade = CascadeType.ALL)
-	private List<RelVacunaViaAplicacion> rel_vacuna_vias_aplicacion;
+	//@OneToMany(mappedBy = "via_aplicacion", cascade = CascadeType.ALL)
+	//private List<RelVacunaViaAplicacion> rel_vacuna_vias_aplicacion;
 }

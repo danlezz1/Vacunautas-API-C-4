@@ -76,6 +76,7 @@ public class LaboratorioService {
 					.orElseThrow(() -> new NotDataFoundException("El laboratorio no existe..."));
 
 			existeLaboratorio.setNombre_lab(laboratorio.getNombre_lab());
+			
 			laboratorioRepository.save(existeLaboratorio);
 			return existeLaboratorio;
 		} catch (ValidateServiceException | NotDataFoundException e) {

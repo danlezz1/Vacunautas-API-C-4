@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Niño {
 	
 	@Id
-	@Column(name = "idNiño", nullable = false)
+	@Column(name = "id_niño", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idNiño;
 	

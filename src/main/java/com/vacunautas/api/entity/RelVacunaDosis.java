@@ -27,18 +27,18 @@ import lombok.Setter;
 public class RelVacunaDosis {
 	
 	@Id
-	@Column(name = "idRel_Vac_Dosis", nullable = false)
+	@Column(name = "id_rel_vac_dosis", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idRel_Vac_Dosis;
 	
 	//relación con la tabla vacunas
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idVacuna", nullable = false, updatable = false, referencedColumnName = "idVacuna")
+	@JoinColumn(name = "id_vacuna", nullable = false, updatable = false, referencedColumnName = "id_vacuna")
 	private Vacuna vacuna;
 	
 	//relación con la tabla dosis
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idDosis", nullable = false, updatable = false, referencedColumnName = "idDosis")
+	@JoinColumn(name = "id_dosis", nullable = false, updatable = false, referencedColumnName = "id_dosis")
 	private Dosis dosis;
 
 }

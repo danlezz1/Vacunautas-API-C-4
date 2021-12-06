@@ -4,9 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,9 +28,14 @@ import lombok.Setter;
 public class Acudiente {
 	
 	@Id
-	@Column(name = "idAcudiente", nullable = false)
+	@Column(name = "id_acudiente", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAcudiente;
+	
+	//Relación con la tabla estado civil
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_estado_civil", nullable = false, updatable = true, referencedColumnName = "id_estado_civil")
+	private EstadoCivil estadoCivil;
 	
 	@Column(name = "identificacion", nullable = false, length = 30)
 	private String identificacion;
@@ -64,5 +72,5 @@ public class Acudiente {
 	
 	@Column(name = "estrato")
 	private int estrato;
-
+	
 }

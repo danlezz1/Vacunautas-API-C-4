@@ -27,7 +27,7 @@ import lombok.Setter;
 public class Vacuna {
 	
 	@Id
-	@Column(name = "idVacuna", nullable = false)
+	@Column(name = "id_vacuna", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVacuna;
 	
@@ -35,18 +35,18 @@ public class Vacuna {
 	private String nombre_vacuna;
 	
 	//Relación con la tabla intermedia vacunas_laboratorios
-	@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	private List<RelVacunaLaboratorio> rel_vacuna_laboratorio; //new ArrayList<RelVacunaLaboratorio>();
+	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
+	//private List<RelVacunaLaboratorio> rel_vacuna_laboratorio; //new ArrayList<RelVacunaLaboratorio>();
 	
 	//Relación con la tabla intermedia vacunas_dosis
-	@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	private List<RelVacunaDosis> rel_vacuna_dosis;
+	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
+	//private List<RelVacunaDosis> rel_vacuna_dosis;
 	
 	//Relación con la tabla intermedia vacunas_vias_de_aplicación
-	@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	private List<RelVacunaViaAplicacion> rel_vacuna_vias_aplicacion;
+	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
+	//private List<RelVacunaViaAplicacion> rel_vacuna_vias_aplicacion;
 	
 	//Relación con la tabla intermedia vacunas_edades
-	@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	private List<RelVacunaEdad> rel_vacuna_edad;
+	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
+	//private List<RelVacunaEdad> rel_vacuna_edad;
 }

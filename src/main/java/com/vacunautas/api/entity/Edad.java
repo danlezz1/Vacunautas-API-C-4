@@ -27,7 +27,7 @@ import lombok.Setter;
 public class Edad {
 
 	@Id
-	@Column(name = "idEdad", nullable = false)
+	@Column(name = "id_edad", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEdad;
 
@@ -35,6 +35,6 @@ public class Edad {
 	private String edad;
 
 	//Relación con la tabla intermedia vacunas_edades
-	@OneToMany(mappedBy = "edad", cascade = CascadeType.ALL)
-	private List<RelVacunaEdad> rel_vacuna_edad;
+	//@OneToMany(mappedBy = "edad", cascade = CascadeType.ALL)
+	//private List<RelVacunaEdad> rel_vacuna_edad;
 }

@@ -27,7 +27,7 @@ import lombok.Setter;
 public class Dosis {
 
 	@Id
-	@Column(name = "idDosis", nullable = false)
+	@Column(name = "id_dosis", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDosis;
 
@@ -35,6 +35,6 @@ public class Dosis {
 	private String nombre_dosis;
 
 	//Relación con la tabla intermedia vacunas_dosis
-	@OneToMany(mappedBy = "dosis", cascade = CascadeType.ALL)
-	private List<RelVacunaDosis> rel_vacuna_dosis;
+	//@OneToMany(mappedBy = "dosis", cascade = CascadeType.ALL)
+	//private List<RelVacunaDosis> rel_vacuna_dosis;
 }

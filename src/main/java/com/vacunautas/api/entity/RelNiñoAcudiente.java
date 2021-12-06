@@ -27,20 +27,20 @@ import lombok.Setter;
 public class RelNiñoAcudiente {
 	
 	@Id
-	@Column(name= "idRel_Niño_Acudiente", nullable = false)
+	@Column(name= "id_rel_niño_acudiente", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idRel_Niño_Acudiente;
+	private Long idRelNiñoAcudiente;
 	
 	@Column(name = "parentezco", nullable = false, length = 30)
 	private String parentezco;
 	
 	//relación con la tabla niños
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idNiño", nullable = false, updatable = false, referencedColumnName = "idNiño")
+	@JoinColumn(name = "id_niño", nullable = false, updatable = false, referencedColumnName = "id_niño")
 	private Niño niño;
 	
 	//relación con la tabla acudientes
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idAcudiente", nullable = false, updatable = false, referencedColumnName = "idAcudiente")
+	@JoinColumn(name = "id_acudiente", nullable = false, updatable = false, referencedColumnName = "id_acudiente")
 	private Acudiente acudiente;
 }

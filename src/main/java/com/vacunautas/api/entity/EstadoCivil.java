@@ -23,9 +23,9 @@ import lombok.Setter;
 public class EstadoCivil {
 	
 	@Id
-	@Column(name = "idEstado_Civil", nullable = false)
+	@Column(name = "id_estado_civil", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEstado_Civil;
+	private Long idEstadoCivil;
 	
 	@Column(name = "descripcion", nullable = false, length = 30)
 	private String descripcion;
