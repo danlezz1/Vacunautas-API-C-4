@@ -9,7 +9,10 @@ public class VacunaConverter extends AbstractConverter<Vacuna, VacunaDTO> {
 	public VacunaDTO fromEntity(Vacuna entity) {
 		return VacunaDTO.builder()
 				.idVacuna(entity.getIdVacuna())
-				.nombre_vacuna(entity.getNombre_vacuna())
+				.nombreVacuna(entity.getNombreVacuna())
+				.dosis(entity.getDosis())
+				.edad(entity.getEdad())
+				.viaAplicacion(entity.getViaAplicacion())
 				.build();
 	}
 
@@ -17,7 +20,10 @@ public class VacunaConverter extends AbstractConverter<Vacuna, VacunaDTO> {
 	public Vacuna fromDTO(VacunaDTO dto) {
 		return Vacuna.builder()
 				.idVacuna(dto.getIdVacuna())
-				.nombre_vacuna(dto.getNombre_vacuna())
+				.nombreVacuna(dto.getNombreVacuna())
+				.dosis(dto.getDosis())
+				.edad(dto.getEdad())
+				.viaAplicacion(dto.getViaAplicacion())
 				.build();
 	}
 

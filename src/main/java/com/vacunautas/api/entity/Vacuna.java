@@ -1,14 +1,13 @@
 package com.vacunautas.api.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,21 +31,21 @@ public class Vacuna {
 	private Long idVacuna;
 	
 	@Column(name = "nombre_vacuna", nullable = false, length = 100)
-	private String nombre_vacuna;
+	private String nombreVacuna;
 	
-	//Relación con la tabla intermedia vacunas_laboratorios
-	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	//private List<RelVacunaLaboratorio> rel_vacuna_laboratorio; //new ArrayList<RelVacunaLaboratorio>();
+	//Relación con la tabla dosis
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_dosis", nullable = false, updatable = true, referencedColumnName = "id_dosis")
+	private Dosis dosis;
 	
-	//Relación con la tabla intermedia vacunas_dosis
-	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	//private List<RelVacunaDosis> rel_vacuna_dosis;
+	//Relación con la tabla edades
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_edad", nullable = false, updatable = true, referencedColumnName = "id_edad")
+	private Edad edad;
 	
-	//Relación con la tabla intermedia vacunas_vias_de_aplicación
-	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	//private List<RelVacunaViaAplicacion> rel_vacuna_vias_aplicacion;
+	//Relación con la tabla vías aplicación
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_via", nullable = false, updatable = true, referencedColumnName = "id_via")
+	private ViaAplicacion viaAplicacion;
 	
-	//Relación con la tabla intermedia vacunas_edades
-	//@OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL)
-	//private List<RelVacunaEdad> rel_vacuna_edad;
 }

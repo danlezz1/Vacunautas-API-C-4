@@ -32,7 +32,7 @@ public class EstadoCivilController {
 	public ResponseEntity<WrapperResponse<List<EstadoCivilDTO>>> findAll() {
 		List<EstadoCivil> arregloEstadoCivil = estadoCivilService.findAll();
 		List<EstadoCivilDTO> arragloEstadoCivilDto = converter.fromEntity(arregloEstadoCivil);
-		return new WrapperResponse<>(true, "listado de etados civiles encontrado de manera exitosa", arragloEstadoCivilDto)
+		return new WrapperResponse<>(true, "listado de estados civiles encontrado de manera exitosa", arragloEstadoCivilDto)
 				.createResponse(HttpStatus.OK);
 	}
 

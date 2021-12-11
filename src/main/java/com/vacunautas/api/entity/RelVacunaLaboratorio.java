@@ -36,12 +36,12 @@ public class RelVacunaLaboratorio {
 	
 	//Relación con la tabla vacunas
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_vacuna", nullable = false, updatable = false, referencedColumnName = "id_vacuna")
+	@JoinColumn(name = "id_vacuna", nullable = false, updatable = true, referencedColumnName = "id_vacuna")
 	private Vacuna vacuna;
 	
 	//Relación con la tabla laboratorios
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_laboratorio", nullable = false, updatable = false, referencedColumnName = "id_laboratorio")
+	@JoinColumn(name = "id_laboratorio", nullable = false, updatable = true, referencedColumnName = "id_laboratorio")
 	private Laboratorio laboratorio;
 	
 }

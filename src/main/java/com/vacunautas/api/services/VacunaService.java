@@ -22,7 +22,7 @@ public class VacunaService {
 	@Autowired
 	private VacunaRepository vacunaRepository;
 
-	// Listar todas las vacunas
+	//Listar todas las vacunas
 	public List<Vacuna> findAll() {
 		try {
 			return vacunaRepository.findAll();
@@ -35,7 +35,7 @@ public class VacunaService {
 		}
 	}
 
-	// Buscar vacuna por ID
+	//Buscar vacuna por ID
 	public Vacuna findById(Long id) {
 		try {
 			Vacuna vacuna = vacunaRepository.findById(id)
@@ -50,7 +50,7 @@ public class VacunaService {
 		}
 	}
 
-	// Crear vacuna
+	//Crear vacuna
 	@Transactional
 	public Vacuna create(Vacuna vacuna) {
 		try {
@@ -66,7 +66,7 @@ public class VacunaService {
 		}
 	}
 
-	// Actualizar vacuna
+	//Actualizar vacuna
 	@Transactional
 	public Vacuna update(Vacuna vacuna) {
 		try {
@@ -75,7 +75,11 @@ public class VacunaService {
 			Vacuna existeVacuna = vacunaRepository.findById(vacuna.getIdVacuna())
 					.orElseThrow(() -> new NotDataFoundException("La vacuna no existe..."));
 
-			existeVacuna.setNombre_vacuna(vacuna.getNombre_vacuna());
+			existeVacuna.setNombreVacuna(vacuna.getNombreVacuna());
+			existeVacuna.setDosis(vacuna.getDosis());
+			existeVacuna.setEdad(vacuna.getEdad());
+			existeVacuna.setViaAplicacion(vacuna.getViaAplicacion());
+			
 			vacunaRepository.save(existeVacuna);
 			return existeVacuna;
 		} catch (ValidateServiceException | NotDataFoundException e) {
@@ -87,7 +91,7 @@ public class VacunaService {
 		}
 	}
 
-	// Eliminar vacuna
+	//Eliminar vacuna
 	@Transactional
 	public Vacuna delete(Long id) {
 		try {

@@ -50,10 +50,10 @@ public class Cita {
 	@JoinColumn(name = "id_niño", nullable = false, updatable = true, referencedColumnName = "id_niño")
 	private Niño niño;
 	
-	//Relación con la tabla enfermeras
+	//Relación con la tabla personas
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_enfermera", nullable = false, updatable = true, referencedColumnName = "id_enfermera")
-	private Enfermera enfermera;
+	@JoinColumn(name = "id_enfermera", nullable = false, updatable = true, referencedColumnName = "id_persona")
+	private Persona enfermera;
 	
 	//Relación con la tabla vacunas
 	@ManyToOne(fetch = FetchType.EAGER)

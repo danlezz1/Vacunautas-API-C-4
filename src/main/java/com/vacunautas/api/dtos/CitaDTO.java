@@ -3,9 +3,9 @@ package com.vacunautas.api.dtos;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.vacunautas.api.entity.Enfermera;
 import com.vacunautas.api.entity.EstadoVacunacion;
 import com.vacunautas.api.entity.Niño;
+import com.vacunautas.api.entity.Persona;
 import com.vacunautas.api.entity.Vacuna;
 
 import lombok.AllArgsConstructor;
@@ -27,7 +27,7 @@ public class CitaDTO {
 	private LocalDate fecha_aplicacion;
 	private String comentarios;
 	private Niño niño;
-	private Enfermera enfermera;
+	private Persona enfermera;
 	private Vacuna vacuna;
 	private EstadoVacunacion estadoVacunacion;
 
